@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" stylesheets="@../Styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dev.danielparin.backoffice_tienda.controllers.MainController">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <BorderPane layoutX="185.0" layoutY="100.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <left>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane layoutY="125.0" prefHeight="400.0" prefWidth="200.0" styleClass="nav-form" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <VBox prefHeight="600.0" prefWidth="212.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <AnchorPane prefHeight="85.0" prefWidth="200.0" styleClass="header">
+                                       <children>
+                                          <Label layoutX="75.0" layoutY="30.0" text="Shopr" textFill="#fcf9f9">
+                                             <font>
+                                                <Font name="System Bold" size="18.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="100.0" />
+                                       </VBox.margin>
+                                    </AnchorPane>
+                                    <Button fx:id="informacionButton" mnemonicParsing="false" prefHeight="45.0" prefWidth="232.0" styleClass="nav-button" stylesheets="@../Styles.css" text="Informacion">
+                                       <VBox.margin>
+                                          <Insets bottom="25.0" left="5.0" right="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="inventarioButton" mnemonicParsing="false" prefHeight="45.0" prefWidth="232.0" styleClass="nav-button" stylesheets="@../Styles.css" text="Inventario">
+                                       <VBox.margin>
+                                          <Insets bottom="25.0" left="5.0" right="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="clientesButton" mnemonicParsing="false" prefHeight="45.0" prefWidth="232.0" styleClass="nav-button" stylesheets="@../Styles.css" text="Clientes">
+                                       <VBox.margin>
+                                          <Insets bottom="25.0" left="5.0" right="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <Button fx:id="pedidosButton" mnemonicParsing="false" prefHeight="45.0" prefWidth="232.0" styleClass="nav-button" stylesheets="@../Styles.css" text="Pedidos">
+                                       <VBox.margin>
+                                          <Insets bottom="100.0" left="5.0" right="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                    <ImageView fx:id="imageShop" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                       <VBox.margin>
+                                          <Insets left="25.0" right="25.0" top="30.0" />
+                                       </VBox.margin>
+                                    </ImageView>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </left>
+               <center>
+                  <AnchorPane fx:id="panelView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane layoutX="183.0" layoutY="202.0" prefHeight="397.0" prefWidth="585.0">
+                           <children>
+                              <Label layoutX="92.0" layoutY="40.0" prefHeight="317.0" prefWidth="401.0" text="Bienvenid@,&#10;administrador/a" textFill="#d99a6c">
+                                 <font>
+                                    <Font name="System Bold" size="43.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <styleClass>
+                              <String fx:value="radius" />
+                              <String fx:value="white-bg" />
+                              <String fx:value="shadow" />
+                           </styleClass>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

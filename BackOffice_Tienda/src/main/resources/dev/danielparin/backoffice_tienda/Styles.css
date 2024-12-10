@@ -1,0 +1,90 @@
+/*
+Estilos para la vista principal
+ */
+
+.header {
+    -fx-background-color: linear-gradient(to bottom right, #D99A6C, #F5E3C2);
+    -fx-border-color: #fff;
+    -fx-border-width: 0 0 1px 0;
+}
+
+.nav-form {
+    -fx-background-color: linear-gradient(to bottom right, #D99A6C, #F5E3C2);
+}
+
+.nav-button {
+    -fx-background-color: transparent;
+    -fx-border-color: #fff;
+    -fx-border-width: 1px;
+    -fx-cursor: hand;
+    -fx-text-fill: #fff;
+    -fx-font-size: 14px;
+}
+
+.nav-button:hover {
+    -fx-background-color: #fff;
+    -fx-text-fill: #000;
+}
+
+.action-button {
+    -fx-background-color: #D99A6C;
+    -fx-border-color: #000;
+    -fx-border-width: 1px;
+    -fx-cursor: hand;
+    -fx-text-fill: #000;
+    -fx-font-size: 14px;
+}
+
+.ok-button {
+    -fx-background-color: #B9FBC6;
+    -fx-border-color: #000;
+    -fx-border-width: 1px;
+    -fx-cursor: hand;
+    -fx-text-fill: #000;
+    -fx-font-size: 14px;
+}
+
+.cancel-button {
+    -fx-background-color: #F6B7A8;
+    -fx-border-color: #000;
+    -fx-border-width: 1px;
+    -fx-cursor: hand;
+    -fx-text-fill: #000;
+    -fx-font-size: 14px;
+}
+
+.print-button {
+    -fx-background-color: #A7C7E7;
+    -fx-border-color: #000;
+    -fx-border-width: 1px;
+    -fx-cursor: hand;
+    -fx-text-fill: #000;
+    -fx-font-size: 14px;
+}
+
+.shadow {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 5,0,0,0);
+}
+
+.white-bg {
+    -fx-background-color: #fff;
+}
+
+.radius {
+    -fx-background-radius: 8px;
+}
+
+.table-view {
+    -fx-border-color: #000;
+    -fx-border-width: 2px;
+    -fx-background-color: #F5E3C2;
+    -fx-border-radius: 8px;
+}
+
+.table-view .column-header {
+    -fx-background-color: #D99A6C;
+    -fx-text-fill: #fff;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+}

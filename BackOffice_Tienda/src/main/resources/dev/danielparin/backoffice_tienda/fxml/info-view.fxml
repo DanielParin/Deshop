@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="informacion_Pane" prefHeight="800.0" prefWidth="950.0" styleClass="nav-button" stylesheets="@../Styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dev.danielparin.backoffice_tienda.controllers.InfoController">
+   <children>
+      <AnchorPane layoutX="14.0" layoutY="4.0" prefHeight="146.0" prefWidth="861.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="9.0">
+         <styleClass>
+            <String fx:value="shadow" />
+            <String fx:value="radius" />
+            <String fx:value="white-bg" />
+         </styleClass>
+         <children>
+            <HBox prefHeight="146.0" prefWidth="858.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <AnchorPane prefHeight="136.0" prefWidth="183.0">
+                     <children>
+                        <Label layoutX="54.0" layoutY="92.0" prefHeight="18.0" prefWidth="76.0" text="Ganancias" textFill="#fcf9f9" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="54.0" AnchorPane.rightAnchor="53.0">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="numGanancias_Label" layoutX="85.0" layoutY="51.0" text="0" textFill="#fcf9f9">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <styleClass>
+                        <String fx:value="nav-form" />
+                        <String fx:value="radius" />
+                     </styleClass>
+                     <HBox.margin>
+                        <Insets bottom="6.0" left="25.0" top="6.0" />
+                     </HBox.margin>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="130.0" prefWidth="181.0">
+                     <children>
+                        <Label layoutX="24.0" layoutY="95.0" text="Numero de Clientes" textFill="#fcf9f9" AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="24.0">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="numClientes_Label" layoutX="85.0" layoutY="51.0" text="0" textFill="#fcf9f9">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <styleClass>
+                        <String fx:value="radius" />
+                        <String fx:value="nav-form" />
+                     </styleClass>
+                     <HBox.margin>
+                        <Insets bottom="6.0" left="25.0" top="6.0" />
+                     </HBox.margin>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="136.0" prefWidth="183.0">
+                     <children>
+                        <Label layoutX="36.0" layoutY="92.0" prefHeight="18.0" prefWidth="111.0" text="Pedidos Totales" textAlignment="CENTER" textFill="#fcf9f9" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="36.0" AnchorPane.rightAnchor="36.0">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="numPedidos_Label" layoutX="85.0" layoutY="51.0" text="0" textFill="#fcf9f9">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <styleClass>
+                        <String fx:value="nav-form" />
+                        <String fx:value="radius" />
+                     </styleClass>
+                     <HBox.margin>
+                        <Insets bottom="6.0" left="25.0" top="6.0" />
+                     </HBox.margin>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="136.0" prefWidth="183.0">
+                     <children>
+                        <Label layoutX="20.0" layoutY="92.0" prefHeight="18.0" prefWidth="144.0" text="Numero de Productos" textFill="#fcf9f9" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="16.0">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="numProductos_Label" layoutX="85.0" layoutY="51.0" text="0" textFill="#fcf9f9">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <styleClass>
+                        <String fx:value="nav-form" />
+                        <String fx:value="radius" />
+                     </styleClass>
+                     <HBox.margin>
+                        <Insets bottom="6.0" left="25.0" top="6.0" />
+                     </HBox.margin>
+                  </AnchorPane>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="8.0" layoutY="184.0" prefHeight="410.0" prefWidth="858.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="184.0">
+         <styleClass>
+            <String fx:value="radius" />
+            <String fx:value="shadow" />
+            <String fx:value="white-bg" />
+         </styleClass>
+         <children>
+            <HBox layoutX="174.0" layoutY="109.0" prefHeight="406.0" prefWidth="866.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <AnchorPane prefHeight="366.0" prefWidth="363.0">
+                     <HBox.margin>
+                        <Insets bottom="20.0" left="20.0" right="150.0" top="20.0" />
+                     </HBox.margin>
+                     <styleClass>
+                        <String fx:value="radius" />
+                        <String fx:value="white-bg" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                     <children>
+                        <PieChart layoutX="-81.0" layoutY="-17.0" prefHeight="383.0" prefWidth="419.0" title="Estado de los Pedidos" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="366.0" prefWidth="363.0">
+                     <HBox.margin>
+                        <Insets bottom="20.0" right="20.0" top="20.0" />
+                     </HBox.margin>
+                     <styleClass>
+                        <String fx:value="shadow" />
+                        <String fx:value="white-bg" />
+                        <String fx:value="radius" />
+                     </styleClass>
+                     <children>
+                        <BarChart layoutX="-68.0" layoutY="-17.0" prefHeight="383.0" prefWidth="432.0" title="Clientes" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <xAxis>
+                              <CategoryAxis side="BOTTOM" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis side="LEFT" />
+                           </yAxis>
+                        </BarChart>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <Separator layoutX="16.0" layoutY="168.0" prefWidth="200.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" />
+   </children>
+</AnchorPane>
