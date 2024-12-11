@@ -5,10 +5,12 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import dev.danielparin.backoffice_tienda.adapters.LocalDateAdapter;
+import dev.danielparin.backoffice_tienda.adapters.LocalDateTimeAdapter;
 
 
 public class ApiService {
@@ -21,6 +23,7 @@ public class ApiService {
         this.baseUrl = baseUrl;
         this.gson = new GsonBuilder()
                 .registerTypeAdapter(LocalDate.class, new LocalDateAdapter())
+                .registerTypeAdapter(LocalDateTime.class, new LocalDateTimeAdapter()) // Registrar el adaptador
                 .create();
     }
 

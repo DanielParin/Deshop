@@ -1,5 +1,7 @@
 package dev.danielparin.apitienda.models;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import dev.danielparin.apitienda.models.enums.EstadoPedido;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -22,7 +24,10 @@ public class Pedido {
     @JoinColumn(name = "id_Cliente", nullable = false)
     private Cliente cliente;
 
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    @JsonProperty("fPedido")
     private LocalDate fPedido;
+
     private Double coste;
 
     @Enumerated(EnumType.STRING)

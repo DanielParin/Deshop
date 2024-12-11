@@ -1,5 +1,6 @@
 package dev.danielparin.apitienda.controllers;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import dev.danielparin.apitienda.exceptions.*;
 import dev.danielparin.apitienda.models.Cliente;
 import dev.danielparin.apitienda.models.Pedido;
@@ -9,9 +10,13 @@ import dev.danielparin.apitienda.services.ClienteService;
 import dev.danielparin.apitienda.services.PedidoService;
 import dev.danielparin.apitienda.services.ProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api")
@@ -39,7 +44,7 @@ public class TiendaController {
     public List<Cliente> buscarClientesPorNombre(@RequestParam String nombre) {
         List<Cliente> clientes = clienteService.buscarPorNombre(nombre);
         if (clientes.isEmpty()) {
-            throw new ClienteNoEncontradoException(-1L);  // Usamos un ID ficticio para indicar que no se encontraron clientes
+            throw new ClienteNoEncontradoException(-1L);
         }
         return clientes;
     }
@@ -162,11 +167,28 @@ public class TiendaController {
 
     // Crear un nuevo pedido
     @PostMapping("/pedidos")
-    public Pedido crearPedido(@RequestBody Pedido pedido) {
+    public ResponseEntity<Pedido> crearPedido(@RequestBody Map<String, Object> requestBody) {
+        // Extraer el pedido del mapa
+        Pedido pedido = new ObjectMapper().convertValue(requestBody.get("pedido"), Pedido.class);
+
+        // Extraer la lista de productos del mapa
+        List<Map<String, Object>> productosList = (List<Map<String, Object>>) requestBody.get("productos");
+
+        List<Producto> productos = new ArrayList<>();
+        for (Map<String, Object> productoMap : productosList) {
+            Producto producto = new ObjectMapper().convertValue(productoMap, Producto.class);
+            productos.add(producto);
+        }
+
         if (pedido.getIdCliente() == null) {
             throw new ValidationException("El ID del cliente es obligatorio para crear un pedido");
         }
-        return pedidoService.guardarPedido(pedido);
+
+        // Llamamos al servicio para guardar el pedido y los productos asociados
+        Pedido pedidoGuardado = pedidoService.guardarPedidoConProductos(pedido, productos);
+
+        // Retornamos el pedido creado con un código 201 (Created)
+        return ResponseEntity.status(HttpStatus.CREATED).body(pedidoGuardado);
     }
 
     // Actualizar un pedido existente
@@ -174,8 +196,10 @@ public class TiendaController {
     public Pedido actualizarPedido(@PathVariable Long id, @RequestBody Pedido pedido) {
         Pedido pedidoExistente = pedidoService.buscarPorId(id)
                 .orElseThrow(() -> new PedidoNoEncontradoException(id));
-        pedido.setIdPedido(pedidoExistente.getIdPedido());
-        return pedidoService.guardarPedido(pedido);
+        if (pedido.getEstado() != null) {
+            pedidoExistente.setEstado(pedido.getEstado());
+        }
+        return pedidoService.actualizarPedido(pedidoExistente);
     }
 
     // Eliminar un pedido

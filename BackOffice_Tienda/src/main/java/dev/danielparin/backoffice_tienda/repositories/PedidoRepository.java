@@ -12,7 +12,9 @@ public class PedidoRepository {
     private final ApiService apiService;
 
 
-
+    public List<Pedido> findAll() throws Exception {
+        return List.of(apiService.get("pedidos/all", Pedido[].class));
+    }
     public Pedido buscarPedidoPorId(Long id) throws Exception {
         return apiService.get("pedidos/" + id, Pedido.class);
     }
